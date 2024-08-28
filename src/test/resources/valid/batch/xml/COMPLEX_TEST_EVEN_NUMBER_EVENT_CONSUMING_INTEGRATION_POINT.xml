@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ext_integrationpointlibrary:IntegrationPoint
+    name="ComplexTestEvenNumberEventConsumingIntegrationPoint" type="SUBSCRIBER"
+    xmlns:ext_integrationpointlibrary="urn:com:ericsson:schema:xml:oss:ext_integrationpointlibrary">
+    <ext_integrationpointlibrary:property name="bootstrap.servers" value="${kafkaBrokers}" />
+    <ext_integrationpointlibrary:property name="group.id" value="COMPLEX_TEST_EVEN_NUMBERS" />
+    <ext_integrationpointlibrary:property name="auto.offset.reset" value="earliest" />
+    <ext_integrationpointlibrary:property name="key.deserializer" value="org.apache.kafka.common.serialization.StringDeserializer" />
+    <ext_integrationpointlibrary:property name="value.deserializer" value="org.apache.kafka.common.serialization.StringDeserializer" />
+    <ext_integrationpointlibrary:property name="auto.create.topics.enable" value="true" />
+    <ext_integrationpointlibrary:destination name="undecoded-complex-xml">
+        <ext_integrationpointlibrary:eventId>4</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>6</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>8</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+    <ext_integrationpointlibrary:destination name="decoded-complex-xml">
+        <ext_integrationpointlibrary:eventId>10</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>12</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>14</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+</ext_integrationpointlibrary:IntegrationPoint>

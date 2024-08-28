@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ext_integrationpointlibrary:IntegrationPoint
+    name="ValidIntegrationPoint" type="PUBLISHER"
+    xmlns:ext_integrationpointlibrary="urn:com:ericsson:schema:xml:oss:ext_integrationpointlibrary">
+    <ext_integrationpointlibrary:property name="bootstrap.servers" value="localhost:59002" />
+    <ext_integrationpointlibrary:property name="key.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:property name="value.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:property name="auto.create.topics.enable" value="true" />
+    <ext_integrationpointlibrary:destination name="undecoded">
+        <ext_integrationpointlibrary:property name="partition_count" value="1" />
+        <ext_integrationpointlibrary:property name="partition_class" value="org.ericsson.aia.common.partition.Partitioner" />
+        <ext_integrationpointlibrary:eventId>EventId1</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId2</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId3</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+    <ext_integrationpointlibrary:destination name="decoded">
+        <ext_integrationpointlibrary:property name="partition_count" value="1" />
+        <ext_integrationpointlibrary:eventId>EventId1</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId5</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId6</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId7</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+    <ext_integrationpointlibrary:destination name="raw">
+        <ext_integrationpointlibrary:property name="partition_count" value="1" />
+        <ext_integrationpointlibrary:eventId>1</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>3</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>5</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>99</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+</ext_integrationpointlibrary:IntegrationPoint>

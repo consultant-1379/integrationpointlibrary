@@ -1,0 +1,41 @@
+{
+    "type" : "PUBLISHER",
+    "properties": [
+      {"name" :"bootstrap.servers", "value" :  "localhost:59003"},
+      {"name" :"acks"             , "value" :  "all"},
+      {"name" :"retries"          , "value" :  "0"},
+      {"name" :"batch.size"       , "value" :  "16384"},
+      {"name" :"linger.ms"        , "value" :  "1"},
+      {"name" :"buffer.memory"    , "value" :  "33554432"},
+      {"name" :"key.serializer"   , "value" :  "org.apache.kafka.common.serialization.StringSerializer"},
+      {"name" :"value.serializer" , "value" :  "org.apache.kafka.common.serialization.StringSerializer"},
+      {"name" :"partition_count"  , "value" :   "1"},
+      {"name" :"auto.create.topics.enable"  , "value" :   "true"}
+    ],
+    "destinations" : [
+        {
+            "name" : "undecoded",
+            "properties": [
+                   {"name" :"partition_count",  "value" :   "1"},
+                    {"name" :"partition_class",  "value" :   "org.ericsson.aia.common.partition.Partitioner"}
+            ],
+            "events" : [
+                "EventId1",
+                "EventId2",
+                "EventId3"
+            ]
+        },
+        {
+            "name" : "decoded",
+            "properties": [
+                {"name" :"partition_count",  "value" :   "1"}
+            ],
+            "events" : [
+                "EventId1",
+                "EventId5",
+                "EventId6",
+                "EventId7"
+            ]
+        }
+    ]
+}

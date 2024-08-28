@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*------------------------------------------------------------------------------
+  ~  *******************************************************************************
+  ~  * COPYRIGHT Ericsson 2017
+  ~  *
+  ~  * The copyright to the computer program(s) herein is the property of
+  ~  * Ericsson Inc. The programs may be used and/or copied only with written
+  ~  * permission from Ericsson Inc. or in accordance with the terms and
+  ~  * conditions stipulated in the agreement/contract under which the
+  ~  * program(s) have been supplied.
+  ~  *******************************************************************************
+  ~  *----------------------------------------------------------------------------*/
+  -->
+
+<ext_integrationpointlibrary:IntegrationPoint
+    name="EventProducingIntegrationPoint" type="PUBLISHER"
+    xmlns:ext_integrationpointlibrary="urn:com:ericsson:schema:xml:oss:ext_integrationpointlibrary">
+    <ext_integrationpointlibrary:property name="bootstrap.servers" value="localhost:59003" />
+    <ext_integrationpointlibrary:property name="acks" value="all" />
+    <ext_integrationpointlibrary:property name="retries" value="0" />
+    <ext_integrationpointlibrary:property name="batch.size" value="16384" />
+    <ext_integrationpointlibrary:property name="linger.ms" value="1" />
+    <ext_integrationpointlibrary:property name="buffer.memory" value="33554432" />
+    <ext_integrationpointlibrary:property name="key.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:property name="value.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:destination name="undecoded">
+        <ext_integrationpointlibrary:property name="partition_count" value="5" />
+        <ext_integrationpointlibrary:property name="partition_class" value="org.ericsson.aia.common.partition.Partitioner" />
+        <ext_integrationpointlibrary:eventId>EventId1</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId2</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId3</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+    <ext_integrationpointlibrary:destination name="decoded">
+        <ext_integrationpointlibrary:property name="partition_count" value="3" />
+        <ext_integrationpointlibrary:eventId>EventId1</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId5</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId6</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId7</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+</ext_integrationpointlibrary:IntegrationPoint>

@@ -1,0 +1,35 @@
+{
+    "type" : "PUBLISHER",
+    "properties": [
+      {"name" :"bootstrap.servers", "value" :  "${kafkaBrokers}"},
+      {"name" :"acks"             , "value" :  "all"},
+      {"name" :"retries"          , "value" :  "0"},
+      {"name" :"batch.size"       , "value" :  "16384"},
+      {"name" :"linger.ms"        , "value" :  "1"},
+      {"name" :"buffer.memory"    , "value" :  "33554432"},
+      {"name" :"key.serializer"   , "value" :  "org.apache.kafka.common.serialization.StringSerializer"},
+      {"name" :"value.serializer" , "value" :  "org.apache.kafka.common.serialization.StringSerializer"},
+      {"name" :"partition_count"  , "value" :   "1"},
+      {"name" :"auto.create.topics.enable"  , "value" :   "true"}
+    ],
+    "destinations" : [
+        {
+            "name" : "undecoded-complex",
+            "properties": [],
+            "events" : [
+                "5",
+                "7",
+                "9"
+            ]
+        },
+        {
+            "name" : "decoded-complex",
+            "properties": [],
+            "events" : [
+                "11",
+                "13",
+                "15"
+            ]
+        }
+    ]
+}

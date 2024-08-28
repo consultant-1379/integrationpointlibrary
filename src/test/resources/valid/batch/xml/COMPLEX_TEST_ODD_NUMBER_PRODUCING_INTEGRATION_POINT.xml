@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ext_integrationpointlibrary:IntegrationPoint
+    name="ComplexTestOddNumberEventProducingIntegrationPoint" type="PUBLISHER"
+    xmlns:ext_integrationpointlibrary="urn:com:ericsson:schema:xml:oss:ext_integrationpointlibrary">
+    <ext_integrationpointlibrary:property name="bootstrap.servers" value="${kafkaBrokers}" />
+    <ext_integrationpointlibrary:property name="acks" value="all" />
+    <ext_integrationpointlibrary:property name="retries" value="0" />
+    <ext_integrationpointlibrary:property name="batch.size" value="16384" />
+    <ext_integrationpointlibrary:property name="linger.ms" value="1" />
+    <ext_integrationpointlibrary:property name="buffer.memory" value="33554432" />
+    <ext_integrationpointlibrary:property name="key.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:property name="value.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:property name="auto.create.topics.enable" value="true" />
+    <ext_integrationpointlibrary:destination name="undecoded-complex-xml">
+        <ext_integrationpointlibrary:eventId>5</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>7</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>9</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+    <ext_integrationpointlibrary:destination name="decoded-complex-xml">
+        <ext_integrationpointlibrary:eventId>11</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>13</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>15</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+</ext_integrationpointlibrary:IntegrationPoint>

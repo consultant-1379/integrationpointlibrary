@@ -1,0 +1,24 @@
+{
+    "type" : "SUBSCRIBER",
+    "properties": [
+        {"name" :"bootstrap.servers", "value" :  "localhost:59003"},
+        {"name" : "group.id",                     "value":"XXX_EVENTS"},
+        {"name" : "auto.offset.reset",      "value":"earliest"},
+        {"name" :"key.deserializer"   , "value" :  "org.apache.kafka.common.serialization.StringDeserializer"},
+        {"name" :"value.deserializer" , "value" :  "org.apache.kafka.common.serialization.StringDeserializer"},
+        {"name" :"auto.create.topics.enable"  , "value" :   "true"}
+    ],
+    "destinations" : [
+        {
+            "name" : "decoded",
+            "properties": [
+                   {"name" :"thread_count",  "value" :   "5"}
+            ],
+            "events" : [
+                "EventId1",
+                "EventId2",
+                "EventId5"
+            ]
+        }
+    ]
+}

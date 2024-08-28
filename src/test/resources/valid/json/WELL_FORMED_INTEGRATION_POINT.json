@@ -1,0 +1,47 @@
+{
+    "type" : "PUBLISHER",
+    "properties": [
+      {"name" :"bootstrap.servers", "value" :  "localhost:59002"},
+      {"name" :"key.serializer"   , "value" :  "org.apache.kafka.common.serialization.StringSerializer"},
+      {"name" :"value.serializer" , "value" :  "org.apache.kafka.common.serialization.StringSerializer"},
+      {"name" :"auto.create.topics.enable"  , "value" :   "true"}
+    ],
+    "destinations" : [
+        {
+            "name" : "undecoded",
+            "properties": [
+                   {"name" :"partition_count",  "value" :   "1"},
+                    {"name" :"partition_class",  "value" :   "org.ericsson.aia.common.partition.Partitioner"}
+            ],
+            "events" : [
+                "EventId1",
+                "EventId2",
+                "EventId3"
+            ]
+        },
+        {
+            "name" : "decoded",
+            "properties": [
+                {"name" :"partition_count",  "value" :   "1"}
+            ],
+            "events" : [
+                "EventId1",
+                "EventId5",
+                "EventId6",
+                "EventId7"
+            ]
+        },
+        {
+            "name" : "raw",
+            "properties": [
+                {"name" :"partition_count",  "value" :   "1"}
+            ],
+            "events" : [
+                "1",
+                "3",
+                "5",
+                "99"
+            ]
+        }
+    ]
+}

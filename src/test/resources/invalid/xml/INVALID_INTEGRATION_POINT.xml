@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ext_integrationpointlibrary:IntegrationPoint
+    name="InvalidIntegrationPoint" type="PUBLISHER"
+    xmlns:ext_integrationpointlibrary="urn:com:ericsson:schema:xml:oss:ext_integrationpointlibrary">
+    <ext_integrationpointlibrary:property name="bootstrap.servers" value="localhost:59002" />
+    <ext_integrationpointlibrary:property name="key.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:property name="value.serializer" value="org.apache.kafka.common.serialization.StringSerializer" />
+    <ext_integrationpointlibrary:property name="auto.create.topics.enable" value="true" />
+    <destinations>

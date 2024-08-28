@@ -1,0 +1,25 @@
+{
+    "type" : "SUBSCRIBER",
+    "properties": [
+        {"name" :"bootstrap.servers", "value" :  "${kafkaBrokers}"},
+        {"name" : "group.id",                     "value":"COMPLEX_TEST_ALL_NUMBERS"},
+        {"name" : "auto.offset.reset",      "value":"earliest"},
+        {"name" :"key.deserializer"   , "value" :  "org.apache.kafka.common.serialization.StringDeserializer"},
+        {"name" :"value.deserializer" , "value" :  "org.apache.kafka.common.serialization.StringDeserializer"},
+        {"name" :"auto.create.topics.enable"  , "value" :   "true"}
+    ],
+    "destinations" : [
+        {
+            "name" : "undecoded-complex",
+            "events" : [
+
+            ]
+        },
+        {
+            "name" : "decoded-complex",
+            "events" : [
+
+            ]
+        }
+    ]
+}

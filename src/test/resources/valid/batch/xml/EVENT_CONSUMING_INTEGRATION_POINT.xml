@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*------------------------------------------------------------------------------
+  ~  *******************************************************************************
+  ~  * COPYRIGHT Ericsson 2017
+  ~  *
+  ~  * The copyright to the computer program(s) herein is the property of
+  ~  * Ericsson Inc. The programs may be used and/or copied only with written
+  ~  * permission from Ericsson Inc. or in accordance with the terms and
+  ~  * conditions stipulated in the agreement/contract under which the
+  ~  * program(s) have been supplied.
+  ~  *******************************************************************************
+  ~  *----------------------------------------------------------------------------*/
+  -->
+
+<ext_integrationpointlibrary:IntegrationPoint
+    name="EventConsumingIntegrationPoint" type="SUBSCRIBER"
+    xmlns:ext_integrationpointlibrary="urn:com:ericsson:schema:xml:oss:ext_integrationpointlibrary">
+    <ext_integrationpointlibrary:property name="bootstrap.servers" value="localhost:59003" />
+    <ext_integrationpointlibrary:property name="group.id" value="XXX_EVENTS" />
+    <ext_integrationpointlibrary:property name="auto.offset.reset" value="earliest" />
+    <ext_integrationpointlibrary:property name="key.deserializer" value="org.apache.kafka.common.serialization.StringDeserializer" />
+    <ext_integrationpointlibrary:property name="value.deserializer" value="org.apache.kafka.common.serialization.StringDeserializer" />
+    <ext_integrationpointlibrary:property name="auto.create.topics.enable" value="true" />
+    <ext_integrationpointlibrary:destination name="decoded">
+        <ext_integrationpointlibrary:property name="thread_count" value="5" />
+        <ext_integrationpointlibrary:eventId>EventId1</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId2</ext_integrationpointlibrary:eventId>
+        <ext_integrationpointlibrary:eventId>EventId5</ext_integrationpointlibrary:eventId>
+    </ext_integrationpointlibrary:destination>
+</ext_integrationpointlibrary:IntegrationPoint>
